@@ -38,8 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts.apps.AccountsConfig',
-    'courses.apps.CoursesConfig',
-    'exams.apps.ExamsConfig',
+    'modules.apps.ModulesConfig',
     'pages.apps.PagesConfig',
 ]
 
@@ -68,6 +67,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
         },
+        
     },
 ]
 

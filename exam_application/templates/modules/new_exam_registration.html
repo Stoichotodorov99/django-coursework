@@ -1,0 +1,29 @@
+{% extends '../base.html' %}
+{% load static %}
+{% block extrahead %}
+    <title>Специалности</title>
+{%  endblock %}
+{%  block content %}
+  <p>Вашите имена и имейл адрес ще бъдат попълнени автоматично базирано на данниг предоставени при регистрация. 
+    Ако желаете да промените нещо посетете вашият профил
+  </p>
+  
+  <section class="flex justify-center items-center h-screen w-full">
+    <form action="{% url 'modules:register_for_exam' module.id exam.id %}"
+          class="flex flex-col space-y-6 bg-gray-100 rounded-lg shadow-lg p-6"
+          method="POST"      
+    >
+        {% csrf_token %}
+        <p class="text-xl font-semibold">{{module.name}} - Регистрация за изпит: {{exam.name}}</p>
+        </p>
+        <label for="payment_method">Как желаете да платите</label>
+        <select name="payment_method" id="payment_method" class="p-2">
+            <option value="cash">Наложен платеж</option>
+            <option value="card">Карта</option>
+            <option value="bank transfer">Банков превод</option>
+        </select>
+        <button class="">Заяви регистрация за изпит</button>
+    </form>
+  </section>
+  
+{% endblock %}
